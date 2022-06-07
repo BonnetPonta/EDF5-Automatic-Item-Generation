@@ -11,7 +11,6 @@ from pyautogui import keyDown, keyUp, mouseDown, mouseUp
 class Colors:
     CYAN = '\033[36m'
     GREEN = '\033[32m'
-    YELLOW = '\033[33m'
     RESET = '\033[0m'
 
 

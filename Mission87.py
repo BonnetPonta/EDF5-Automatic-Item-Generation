@@ -8,15 +8,21 @@ from keyboard import is_pressed
 from pyautogui import keyDown, keyUp, mouseDown, mouseUp
 
 
+def end():
+    print(f"[{datetime.now()}] The Esc key is pressed and the process is terminated.")
+    keyUp("s")
+    mouseUp(button="left")
+
+
 def script():
+    print(f"[{datetime.now()}] START!!")
     while True:
         if is_pressed("Esc"):
-            print(f"[{datetime.now()}] The Esc key is pressed and the process is terminated.")
-            keyUp("s")
-            mouseUp(button="left")
+            end()
             break
         keyDown("s")
         mouseDown(button="left")
+    print(f"[{datetime.now()}] END!!")
 
 
 def main():
@@ -26,4 +32,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except:
+        end()
